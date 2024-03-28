@@ -8,6 +8,9 @@ import UpdateProduct from "../admin/UpdateProduct";
 import UploadImages from "../admin/UploadImages";
 import ListOrders from "../admin/ListOrders";
 import ProcessOrder from "../admin/ProcessOrder";
+import ListUsers from "../admin/ListUsers";
+import UpdateUser from "../admin/UpdateUser";
+import ProductReviews from "../admin/ProductReviews";
 
 const adminRoutes = () => {
   return (
@@ -62,7 +65,41 @@ const adminRoutes = () => {
         }
       />
 
-      
+      <Route
+        path="/admin/orders/:id"
+        element={
+          <ProtectedRoute admin={true}>
+            <ProcessOrder />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/users"
+        element={
+          <ProtectedRoute admin={true}>
+            <ListUsers />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/users/:id"
+        element={
+          <ProtectedRoute admin={true}>
+            <UpdateUser />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/reviews"
+        element={
+          <ProtectedRoute admin={true}>
+            <ProductReviews />
+          </ProtectedRoute>
+        }
+      />
     </>
   );
 };
