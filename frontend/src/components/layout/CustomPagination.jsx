@@ -29,22 +29,24 @@ const CustomPagination = ({ resPerPage, filteredProductsCount }) => {
   };
 
   return (
-    <div className="d-flex justify-content-center my-5">
-      {filteredProductsCount > resPerPage && (
-        <Pagination
-          activePage={currentPage}
-          itemsCountPerPage={resPerPage}
-          totalItemsCount={filteredProductsCount}
-          onChange={setCurrentPageNo}
-          nextPageText={"Next"}
-          prevPageText={"Prev"}
-          firstPageText={"First"}
-          lastPageText={"Last"}
-          itemClass="page-item"
-          linkClass="page-link"
-        />
-      )}
-    </div>
+    <>
+      <div className="d-flex justify-content-center my-5">
+        {filteredProductsCount > resPerPage && (
+          <Pagination
+            activePage={currentPage}
+            itemsCountPerPage={resPerPage}
+            totalItemsCount={filteredProductsCount}
+            onChange={setCurrentPageNo}
+            nextPageText={"Next"}
+            prevPageText={"Prev"}
+            firstPageText={"First"}
+            lastPageText={"Last"}
+            itemClass="page-item"
+            linkClass="page-link"
+          />
+        )}
+      </div>
+    </>
   );
 };
 

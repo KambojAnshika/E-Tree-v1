@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import CustomPagination from "./layout/CustomPagination";
 import { useSearchParams } from "react-router-dom";
 import Filters from "./layout/Filters";
+import HomeBanner from "./layout/HomeBanner";
 
 const Home = () => {
   let [searchParams] = useSearchParams();
@@ -50,6 +51,8 @@ const Home = () => {
             keyword ? "col-12 col-sm-6 col-md-9" : "col-12 col-sm-6 col-md-12"
           }
         >
+          {keyword ? "" : <HomeBanner />}
+
           <h1 id="products_heading" className="text-secondary">
             {keyword
               ? `${data?.products?.length} Products found with keyword: ${keyword}`

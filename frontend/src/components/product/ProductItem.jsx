@@ -10,9 +10,7 @@ const ProductItem = ({ product, columnSize }) => {
       <div className="card p-3 rounded">
         <img
           className="card-img-top mx-auto"
-          src={
-            product?.images[0] ? product?.images[0]?.url : { default_product }
-          }
+          src={product?.images[0] ? product?.images[0]?.url : default_product}
           alt={product.name}
         />
         <div className="card-body ps-3 d-flex justify-content-center flex-column">
